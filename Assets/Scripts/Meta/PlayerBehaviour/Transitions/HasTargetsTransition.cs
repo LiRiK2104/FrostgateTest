@@ -16,13 +16,24 @@ namespace Meta.PlayerBehaviour.Transitions
         protected override void OnEnable()
         {
             base.OnEnable();
-        
+
+            _movementQueue.Initialized += TryTransit;
             _movementQueue.TargetEnqueued += SetNeedTransit;
+            
+            TryTransit(_movementQueue.TargetsCount);
         }
         
         private void OnDisable()
         {
+            _movementQueue.Initialized -= TryTransit;
             _movementQueue.TargetEnqueued -= SetNeedTransit;
+        }
+
+
+        private void TryTransit(int targetsCount)
+        {
+            if (targetsCount > 0) 
+                SetNeedTransit();
         }
     }
 }

@@ -39,6 +39,14 @@ namespace Core
         }
 
 
+        internal bool CanReachPosition(Vector3 position)
+        {
+            NavMeshPath path = new();
+            _agent.CalculatePath(position, path);
+        
+            return path.status == NavMeshPathStatus.PathComplete;
+        }
+        
         private void OnPointerDown(Vector2 screenPosition)
         {
             if (TryGetReachablePosition(screenPosition, out Vector3 targetPosition) == false) 
@@ -67,14 +75,6 @@ namespace Core
             targetPosition = hit.point;
         
             return true;
-        }
-    
-        private bool CanReachPosition(Vector3 position)
-        {
-            NavMeshPath path = new();
-            _agent.CalculatePath(position, path);
-        
-            return path.status == NavMeshPathStatus.PathComplete;
         }
     }
 }
