@@ -25,26 +25,4 @@ namespace Helpers
             return new Vector3(X, Y, Z);
         }
     }
-    
-    [Serializable]
-    public class QuaternionSerializable
-    {
-        [JsonRequired] internal float X;
-        [JsonRequired] internal float Y;
-        [JsonRequired] internal float Z;
-        [JsonRequired] internal float W;
-
-        public QuaternionSerializable(Quaternion quaternion)
-        {
-            X = quaternion.x;
-            Y = quaternion.y;
-            Z = quaternion.z;
-            W = quaternion.w;
-        }
-
-        internal Quaternion ToQuaternion()
-        {
-            return new Quaternion(X, Y, Z, W);
-        }
-    }
 }

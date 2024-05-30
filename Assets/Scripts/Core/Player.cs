@@ -53,10 +53,10 @@ namespace Core
         private async void Load()
         {
             Vector3Serializable loadedPosition = await _storage.SavingBehaviour.Load(PositionKey, new Vector3Serializable(Vector3.zero));
-            QuaternionSerializable loadedRotation = await _storage.SavingBehaviour.Load(RotationKey, new QuaternionSerializable(Quaternion.identity));
+            Vector3Serializable loadedRotation = await _storage.SavingBehaviour.Load(RotationKey, new Vector3Serializable(Quaternion.identity.eulerAngles));
 
             Agent.Warp(loadedPosition.ToVector3());
-            transform.rotation = loadedRotation.ToQuaternion();
+            transform.rotation = Quaternion.Euler(loadedRotation.ToVector3());
             
             Warped?.Invoke();
         }
@@ -67,7 +67,7 @@ namespace Core
                 return;
             
             Vector3Serializable convertedPosition = new(Agent.nextPosition);
-            QuaternionSerializable convertedRotation = new(transform.rotation);
+            Vector3Serializable convertedRotation = new(transform.rotation.eulerAngles);
             
             await _storage.SavingBehaviour.Save(PositionKey, convertedPosition);
             await _storage.SavingBehaviour.Save(RotationKey, convertedRotation);

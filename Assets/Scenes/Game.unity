@@ -352,7 +352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111828602}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29082707, y: -0.3239849, z: 0.10538818, w: 0.894062}
+  m_LocalRotation: {x: 0.29082707, y: -0.3239849, z: 0.105388194, w: 0.8940619}
   m_LocalPosition: {x: 1.59, y: 8.01, z: -8.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1650,7 +1650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29082707, y: -0.3239849, z: 0.10538818, w: 0.894062}
+  m_LocalRotation: {x: 0.29082707, y: -0.3239849, z: 0.105388194, w: 0.8940619}
   m_LocalPosition: {x: 1.5900002, y: 8.01, z: -8.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2687,7 +2687,7 @@ GameObject:
   - component: {fileID: 1704546194}
   - component: {fileID: 1704546193}
   m_Layer: 5
-  m_Name: Start Button
+  m_Name: Main Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2725,7 +2725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4dc9aaf57a19848b0d9b5d7d9cca35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 0
+  scene: 1
 --- !u!114 &1704546194
 MonoBehaviour:
   m_ObjectHideFlags: 0
